@@ -1,153 +1,163 @@
-I. 🧱 Kiến trúc & Cấu trúc Project
-✅ 1. Chuẩn hóa cấu trúc MVVM
+🛍️ Fashion E-Commerce Android App
+
+Ứng dụng bán quần áo xây dựng bằng Kotlin – MVVM – REST API, hướng tới kiến trúc chuẩn, dễ mở rộng và phù hợp làm đồ án tốt nghiệp.
+
+I. 🧱 Architecture & Project Structure
+1️⃣ Kiến trúc: MVVM + Repository Pattern
 data/
-    model/
-    remote/
-    repository/
+│── model/          # Data models
+│── remote/         # API service & network layer
+│── repository/     # Data handling logic
 
 ui/
-    home/
-    category/
-    cart/
-    profile/
-    productdetail/
+│── home/
+│── category/
+│── cart/
+│── profile/
+│── productdetail/
+│── auth/
 
-viewmodel/
-utils/
-✅ 2. Setup dependency chuẩn
+viewmodel/          # ViewModels
+utils/              # Extensions, helpers
+2️⃣ Technology Stack
 
-Retrofit
+Kotlin
 
-Gson/Moshi
+MVVM Architecture
 
-Hilt (DI)
+Retrofit (REST API)
 
-Coroutines
+Gson / Moshi
 
-Glide
+Hilt (Dependency Injection)
+
+Kotlin Coroutines
+
+Glide (Image Loading)
 
 Paging 3
 
 ViewBinding
 
-DataStore (thay SharedPreferences)
+Room (Local Database)
 
-II. 🔐 Authentication (BẮT BUỘC nếu muốn điểm cao)
-Cần có:
+DataStore (Token storage)
 
- Màn hình Login
+II. 🔐 Authentication
 
- Màn hình Register
+Login
 
- Validate form
+Register
 
- Lưu token (DataStore)
+Form Validation
 
- Auto login
+Token storage (DataStore)
 
- Logout
+Auto Login
 
-Bonus:
+Logout
 
- Forgot password
+Bonus
 
- Google login
+Forgot Password
+
+Google Sign-In
 
 III. 🏠 Home Screen
 
- Banner (ViewPager2)
+Banner slider (ViewPager2)
 
- Danh sách sản phẩm mới
+New Products
 
- Sản phẩm bán chạy
+Best Sellers
 
- Hiển thị theo grid (RecyclerView GridLayoutManager)
+Grid layout (RecyclerView + GridLayoutManager)
 
- Pull to refresh
+Pull to refresh
 
 IV. 🗂 Category Screen
 
- Danh mục (Nam / Nữ / Áo / Quần…)
+Category listing (Men / Women / Shirts / Pants / etc.)
 
- Lọc theo category
+Filter by category
 
- Lọc theo giá
+Filter by price range
 
- Sort theo:
+Sort:
 
-Giá tăng dần
+Price ascending
 
-Giá giảm dần
+Price descending
 
-Mới nhất
+Newest
 
 V. 🔎 Search
 
- SearchView
+SearchView integration
 
- Search debounce (delay 300–500ms)
+Debounce search (300–500ms)
 
- Search API
+Search API integration
 
- Lưu lịch sử tìm kiếm
+Search history storage
 
 VI. 📦 Product Detail
 
- Ảnh sản phẩm (ViewPager2)
+Product images (ViewPager2)
 
- Chọn size
+Select size
 
- Chọn màu
+Select color
 
- Số lượng
+Quantity selector
 
- Add to cart
+Add to cart
 
- Hiển thị đánh giá
+Display reviews & ratings
 
 VII. 🛒 Cart
 
- Hiển thị sản phẩm trong giỏ
+Display cart items
 
- Thay đổi số lượng
+Update quantity
 
- Xóa sản phẩm
+Remove items
 
- Tính tổng tiền
+Calculate total price
 
- Lưu cart local (Room)
+Local cart storage (Room)
 
 VIII. 💳 Checkout
 
- Nhập địa chỉ
+Shipping address input
 
- Chọn phương thức thanh toán:
+Payment methods:
 
-COD
+Cash on Delivery (COD)
 
-VNPay (nếu làm được rất mạnh)
+VNPay (Optional – advanced feature)
 
- Tạo đơn hàng
+Create order
 
- Hiển thị màn hình Order Success
+Order success screen
 
 IX. 👤 Profile
 
- Hiển thị thông tin user
+View user information
 
- Update profile
+Update profile
 
- Xem lịch sử đơn hàng
+Order history
 
- Xem chi tiết đơn hàng
+Order detail screen
 
-X. 🌐 Networking
+X. 🌐 Networking Layer
 
- Tạo ApiService
+ApiService interface
 
- Repository pattern
+Repository pattern
 
- Handle:
+UI State handling:
 
 Loading
 
@@ -155,54 +165,64 @@ Success
 
 Error
 
- Global error handling
+Global error handling
 
- Token interceptor
+Token interceptor (Authentication)
 
-XI. 📱 UI/UX Chuẩn Đồ Án
+XI. 🎨 UI/UX Enhancements
 
- Loading skeleton
+Skeleton loading
 
- Shimmer effect
+Shimmer effect
 
- Error screen
+Error screen
 
- Empty state (giỏ hàng rỗng)
+Empty state (e.g., empty cart)
 
- Animation khi add to cart
+Add-to-cart animation
 
- Badge số lượng cart
+Cart badge counter
 
-XII. ⚙️ Technical nâng cao (Giúp bạn ăn điểm cao)
+Dark Mode support
 
-Vì bạn từng hỏi về tương lai lập trình viên và đang muốn build app chuẩn bài bản, mình khuyên thêm:
+XII. 🚀 Advanced Features (For Higher Grade)
 
- Paging 3 cho danh sách sản phẩm
+Paging 3 implementation
 
- Offline cache
+Offline cache
 
- Unit Test ViewModel
+Unit Testing (ViewModel)
 
- Clean Architecture (Domain layer)
+Clean Architecture (Domain layer)
 
- Dark mode
+CI/CD (GitHub Actions)
 
- CI/CD (Github Actions)
+XIII. 📊 Documentation (For Thesis Report)
 
-XIII. 📊 Phần báo cáo đồ án nên có
+Requirement analysis
 
-Phân tích yêu cầu
+Use Case Diagram
 
-Use case diagram
+Class Diagram
 
-Class diagram
+Sequence Diagram
 
-Sequence diagram
+System architecture
 
-Cấu trúc hệ thống
-
-Giải thích MVVM
+MVVM explanation
 
 API structure
 
-Demo ảnh chụp màn hình
+UI Screenshots
+
+🎯 Project Goal
+
+Build a scalable, maintainable and production-ready Android fashion shopping application that demonstrates:
+
+Modern Android development practices
+
+Clean architecture principles
+
+REST API integration
+
+Professional UI/UX implementation
